@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Instant altitude measurement from sea level - Calculate elevation above ocean surface with precision using our free online tool">
+    <meta name="keywords" content="altitude calculator, elevation finder, sea level measurement, altitude tool, ocean surface elevation">
+    <title>Ocean Altitude Calculator | Find Elevation from Sea Level</title>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Ocean Altitude Calculator",
+        "applicationCategory": "Geography Tool",
+        "operatingSystem": "Web",
+        "description": "Accurate elevation measurement tool from ocean surface"
+    }
+    </script>
+    
+    <!-- AdSense Script (Replace with your own) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .calculator {
+            margin: 20px 0;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+        }
+        #result {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-top: 15px;
+        }
+        .disclaimer {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ocean Altitude Calculator</h1>
+        <div class="calculator">
+            <h2>Calculate Elevation from Sea Level</h2>
+            <input type="number" id="pressure" placeholder="Enter pressure (hPa)">
+            <button onclick="calculateAltitude()">Calculate Altitude</button>
+            <div id="result"></div>
+        </div>
+
+        <!-- Content Section for SEO -->
+        <div class="content">
+            <h2>How to Measure Altitude from Ocean Surface</h2>
+            <p>Our advanced altitude calculator uses atmospheric pressure data to determine your elevation relative to sea level...</p>
+        </div>
+
+        <!-- AdSense Ad Unit -->
+        <div class="ad-unit">
+            <!-- Example Responsive Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="disclaimer">
+            <p>* Results are approximate. For scientific measurements please consult professional equipment.</p>
+        </div>
+    </div>
+
+    <script>
+        function calculateAltitude() {
+            const pressure = document.getElementById('pressure').value;
+            // Simplified altitude formula (h = (1 - (P/P0)^(1/5.25588)) * 44307.69396)
+            const altitude = (1 - Math.pow(pressure/1013.25, 0.190284)) * 145366.45;
+            document.getElementById('result').innerHTML = 
+                `Estimated Altitude: ${altitude.toFixed(2)} feet above sea level`;
+        }
+    </script>
+</body>
+</html>
